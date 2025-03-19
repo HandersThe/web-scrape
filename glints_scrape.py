@@ -4,35 +4,12 @@ import json
 import pandas as pd
 import time
 
-cookies = {
-    'device_id': 'ac763852-50ba-4f1b-b775-73e045e1a5dc',
-    '_gcl_au': '1.1.492769749.1742262178',
-    'sessionFirstTouchPath': '/id/opportunities/jobs/explore',
-    '_gcl_gs': '2.1.k1$i1742262175$u113747281',
-    '_ga': 'GA1.1.1874627153.1742262178',
-    '_tgpc': '95087383-3bd6-5242-8594-0a2ca49c11f2',
-    '_fbp': 'fb.1.1742262178805.451810530481791905',
-    '_tt_enable_cookie': '1',
-    '_ttp': '01JPKEP526HSXJDM09T9CAWS34_.tt.1',
-    'airbridge_migration_metadata__taplokerbyglints': '%7B%22version%22%3A%221.10.66%22%7D',
-    'ab180ClientId': '650f2b78-a53b-41da-b13d-f0cfba39ed70',
-    'airbridge_user': '%7B%22attributes%22%3A%7B%22country_code%22%3A%22ID%22%2C%22role%22%3A%22CANDIDATE%22%2C%22has_whatsapp_number%22%3Afalse%2C%22utm_campaign%22%3A%22ID%7CMarketplace%7CSearch%7CBrand%22%2C%22utm_medium%22%3A%22cpc%22%2C%22utm_source%22%3A%22google%22%7D%7D',
-    '_gcl_aw': 'GCL.1742262262.EAIaIQobChMIqsKg0sCSjAMVaqNmAh2EfQ0bEAAYASAAEgLrDPD_BwE',
-    'sensorsdata2015jssdkcross': '%7B%22distinct_id%22%3A%22195a6eb131cef6-05306403171b52-26011d51-2073600-195a6eb131d131c%22%2C%22first_id%22%3A%22%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_utm_source%22%3A%22google%22%2C%22%24latest_utm_medium%22%3A%22cpc%22%2C%22%24latest_utm_campaign%22%3A%22ID%7CMarketplace%7CSearch%7CBrand%22%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMTk1YTZlYjEzMWNlZjYtMDUzMDY0MDMxNzFiNTItMjYwMTFkNTEtMjA3MzYwMC0xOTVhNmViMTMxZDEzMWMifQ%3D%3D%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%22%2C%22value%22%3A%22%22%7D%7D',
-    'builderSessionId': '148bcca97ed74b8c9e8f573ecd6674fe',
-    'sessionLastTouchPath': '/id',
-    '_tguatd': 'eyJzYyI6IihkaXJlY3QpIiwiZnRzIjoiKGRpcmVjdCkifQ==',
-    '_tgidts': 'eyJzaCI6ImQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0MjdlIiwiY2kiOiI4MmY3OThiMC0xMDE2LTVjYWMtYmIxYS01M2E3NGQ1MDNlYjMiLCJzaSI6IjYxMTBiOTg1LTUxYzQtNWQ1Yy1hZjkxLTk1YzY2MzY3NDQ0MSJ9',
-    'sessionIsLastTouch': 'false',
-    '_tglksd': 'eyJzIjoiNjExMGI5ODUtNTFjNC01ZDVjLWFmOTEtOTVjNjYzNjc0NDQxIiwic3QiOjE3NDIzNDY4Nzc0NjUsImciOiJFQUlhSVFvYkNoTUlxc0tnMHNDU2pBTVZhcU5tQWgyRWZRMGJFQUFZQVNBQUVnTHJEUERfQndFIiwiZ3QiOjE3NDIyNjIxNzg2NTIsInNvZCI6IihkaXJlY3QpIiwic29kdCI6MTc0MjI2Njg2MDg2NCwic29kcyI6ImMiLCJzb2RzdCI6MTc0MjM0Njg4MTE1Mn0=',
-    'traceInfo': '%7B%22expInfo%22%3A%22%22%2C%22requestId%22%3A%22b8a545b6276bff974902974be485b4d1%22%7D',
-    'airbridge_touchpoint': '%7B%22channel%22%3A%22glints.com%22%2C%22parameter%22%3A%7B%7D%2C%22generationType%22%3A1224%2C%22url%22%3A%22https%3A//glints.com/id/opportunities/jobs/explore%3Fcountry%3DID%26locationName%3DAll+Cities%252FProvinces%26lastUpdated%3DPAST_24_HOURS%22%2C%22timestamp%22%3A1742346930667%7D',
-    'airbridge_session': '%7B%22id%22%3A%22d9d38aad-5eab-4155-a0c8-6147181c25b7%22%2C%22timeout%22%3A1800000%2C%22start%22%3A1742346904339%2C%22end%22%3A1742346930672%7D',
-    '_tgsid': 'eyJscGQiOiJ7XCJscHVcIjpcImh0dHBzOi8vZ2xpbnRzLmNvbSUyRmlkXCIsXCJscHRcIjpcIkdsaW50cyUzQSUyMFNpdHVzJTIwTG93b25nYW4lMjBLZXJqYSUyMFRlcmJhaWslMjBkaSUyMEluZG9uZXNpYVwiLFwibHByXCI6XCJcIn0iLCJwcyI6IjgyNzY2MjA3LWQwNmYtNDQxNi05MjBlLWE5OTVhMjAzYWMwMiIsInB2YyI6IjQiLCJzYyI6IjYxMTBiOTg1LTUxYzQtNWQ1Yy1hZjkxLTk1YzY2MzY3NDQ0MTotMSIsImVjIjoiMTkiLCJwdiI6IjEiLCJ0aW0iOiI2MTEwYjk4NS01MWM0LTVkNWMtYWY5MS05NWM2NjM2NzQ0NDE6MTc0MjM0Njg4MTM0MTotMSJ9',
-    '_ga_FQ75P4PXDH': 'GS1.1.1742346876.6.1.1742346983.15.0.0',
-}
+# Load cookies from config.json
+with open('config.json', 'r') as config_file:
+    config = json.load(config_file)
+    cookies = config['cookies']
 
-# Base headers (update 'referer' dynamically)
+# Base headers (we’ll update 'referer' dynamically)
 headers = {
     'accept': '*/*',
     'accept-language': 'id',
@@ -54,7 +31,7 @@ params = {
     'op': 'searchJobs',
 }
 
-# Base JSON payload (no need for offset if page is handled via URL)
+# Base JSON payload
 json_data = {
     'operationName': 'searchJobs',
     'variables': {
@@ -64,7 +41,7 @@ json_data = {
             'includeExternalJobs': True,
             'searchVariant': 'VARIANT_A',
             'limit': 30,
-            # Removed 'offset' since pagination seems tied to the page parameter in the referer
+            'offset': 0,  # Will be updated dynamically
         },
     },
     'query': 'query searchJobs($data: JobSearchConditionInput!) {\n  searchJobs(data: $data) {\n    jobsInPage {\n      id\n      title\n      workArrangementOption\n      status\n      createdAt\n      updatedAt\n      isActivelyHiring\n      isHot\n      isApplied\n      shouldShowSalary\n      educationLevel\n      type\n      fraudReportFlag\n      salaryEstimate {\n        minAmount\n        maxAmount\n        CurrencyCode\n        __typename\n      }\n      company {\n        ...CompanyFields\n        __typename\n      }\n      citySubDivision {\n        id\n        name\n        __typename\n      }\n      city {\n        ...CityFields\n        __typename\n      }\n      country {\n        ...CountryFields\n        __typename\n      }\n      salaries {\n        ...SalaryFields\n        __typename\n      }\n      location {\n        ...LocationFields\n        __typename\n      }\n      minYearsOfExperience\n      maxYearsOfExperience\n      source\n      type\n      hierarchicalJobCategory {\n        id\n        level\n        name\n        children {\n          name\n          level\n          id\n          __typename\n        }\n        parents {\n          id\n          level\n          name\n          __typename\n        }\n        __typename\n      }\n      skills {\n        skill {\n          id\n          name\n          __typename\n        }\n        mustHave\n        __typename\n      }\n      traceInfo\n      __typename\n    }\n    numberOfJobsCreatedInLast14Days\n    totalJobs\n    expInfo\n    __typename\n  }\n}\n\nfragment CompanyFields on Company {\n  id\n  name\n  logo\n  status\n  isVIP\n  IndustryId\n  industry {\n    id\n    name\n    __typename\n  }\n  verificationTier {\n    type\n    __typename\n  }\n  __typename\n}\n\nfragment CityFields on City {\n  id\n  name\n  __typename\n}\n\nfragment CountryFields on Country {\n  code\n  name\n  __typename\n}\n\nfragment SalaryFields on JobSalary {\n  id\n  salaryType\n  salaryMode\n  maxAmount\n  minAmount\n  CurrencyCode\n  __typename\n}\n\nfragment LocationFields on HierarchicalLocation {\n  id\n  name\n  administrativeLevelName\n  formattedName\n  level\n  slug\n  latitude\n  longitude\n  parents {\n    id\n    name\n    administrativeLevelName\n    formattedName\n    level\n    slug\n    CountryCode: countryCode\n    parents {\n      level\n      formattedName\n      slug\n      __typename\n    }\n    __typename\n  }\n  __typename\n}',
@@ -99,10 +76,14 @@ else:
 
 # Loop through the selected pages
 for page in pages:
-    print(f"Scraping page {page}...")
+    offset = (page - 1) * 30  # Calculate offset based on page number (0, 30, 60, ...)
+    print(f"Scraping page {page} (offset: {offset})...")
 
     # Update the referer header with the current page number
     headers['referer'] = f'https://glints.com/id/opportunities/jobs/explore?country=ID&locationName=All+Cities%2FProvinces&lastUpdated=PAST_24_HOURS&page={page}'
+
+    # Update the offset in the json_data
+    json_data['variables']['data']['offset'] = offset
 
     # Make the request
     response = requests.post('https://glints.com/api/v2/graphql', params=params, cookies=cookies, headers=headers, json=json_data)
@@ -110,17 +91,31 @@ for page in pages:
     # Check if the request was successful
     if response.status_code == 200:
         try:
-            jobs = response.json()['data']['searchJobs']['jobsInPage']
-            if not jobs:  # If jobsInPage is empty, we might have reached the end
+            response_data = response.json()
+            if response_data is None:
+                print(f"Page {page}: No JSON response received.")
+                continue
+
+            search_jobs = response_data.get('data', {}).get('searchJobs')
+            if not search_jobs:
+                print(f"Page {page}: 'searchJobs' not found in response.")
+                continue
+
+            jobs = search_jobs.get('jobsInPage', [])
+            if not jobs:
                 print(f"Page {page} returned no jobs.")
                 continue
+
+            # Debugging: Print the first job title to verify uniqueness
+            print(f"First job on page {page}: {jobs[0].get('title', 'N/A')}")
 
             # Extract relevant information for each job
             for job in jobs:
                 # Salary handling
                 salary_info = "N/A"
-                if job.get("salaries") and len(job["salaries"]) > 0:
-                    salary = job["salaries"][0]
+                salaries = job.get("salaries")
+                if salaries and len(salaries) > 0:
+                    salary = salaries[0]
                     min_amount = salary.get("minAmount", "N/A")
                     max_amount = salary.get("maxAmount", "N/A")
                     currency = salary.get("CurrencyCode", "N/A")
@@ -132,8 +127,17 @@ for page in pages:
 
                 # City subdivision handling
                 city_subdivision_name = "N/A"
-                if job.get("citySubDivision"):
-                    city_subdivision_name = job["citySubDivision"].get("name", "N/A")
+                city_subdivision = job.get("citySubDivision")
+                if city_subdivision:
+                    city_subdivision_name = city_subdivision.get("name", "N/A")
+
+                # Company and Industry handling with explicit None check
+                company = job.get("company")
+                industry_name = "N/A"
+                if company is not None:  # Explicitly check for None
+                    industry = company.get("industry")
+                    if industry is not None:
+                        industry_name = industry.get("name", "N/A")
 
                 job_info = {
                     "Job Name": job.get("title", "N/A"),
@@ -146,7 +150,7 @@ for page in pages:
                     "Required Skills": skills,
                     "City Name": job.get("city", {}).get("name", "N/A"),
                     "City Subdivision Name": city_subdivision_name,
-                    "Industry Name": job.get("company", {}).get("industry", {}).get("name", "N/A"),
+                    "Industry Name": industry_name,
                     "Company Name": job.get("company", {}).get("name", "N/A"),
                     "When Posted": job.get("createdAt", "N/A")
                 }
@@ -154,8 +158,13 @@ for page in pages:
         except KeyError as e:
             print(f"Error parsing response for page {page}: {e}")
             break
+        except ValueError as e:
+            print(f"Page {page}: Invalid JSON response - {e}")
+            print(f"Raw response: {response.text}")
+            break
     else:
         print(f"Failed to fetch page {page}: Status code {response.status_code}")
+        print(f"Response text: {response.text}")
         break
 
     # Add a delay to avoid rate limiting (e.g., 2 seconds)
@@ -175,4 +184,4 @@ if job_list:
         json.dump(job_list, json_file, indent=4)
     print("Data has been saved to 'glints_jobs_data.json'")
 else:
-    print("No data was collected. Check your page selection or connection.")
+    print("No data was collected. Check your page selection, cookies, or connection.")
