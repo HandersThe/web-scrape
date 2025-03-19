@@ -1,0 +1,373 @@
+{
+    "data": {
+        "searchJobs": {
+            "__typename": "JobSearchResults",
+            "expInfo": "mgtDstExperimentSearchApplication:base_0605,mgtDstExperimentSearchPaidJob:exp_2_1206,mgtDstExpSearchJobFPATrafficControl:exp_0227_decay_1",
+            "jobsInPage": [
+                {
+                    "__typename": "Job",
+                    "city": {
+                        "__typename": "City",
+                        "id": "27880",
+                        "name": "Tangerang"
+                    },
+                    "citySubDivision": null,
+                    "company": {
+                        "IndustryId": 80,
+                        "__typename": "Company",
+                        "id": "6bf7ba3a-34d0-4b1d-ab27-85ffcbfdea8d",
+                        "industry": {
+                            "__typename": "Industry",
+                            "id": 80,
+                            "name": "Marketing and Advertising"
+                        },
+                        "isVIP": true,
+                        "logo": "78051cdf960a7186a15a9ee3b2187eae.jpg",
+                        "name": "PT. KUMEDIA SUKSES ABADI",
+                        "status": "VERIFIED",
+                        "verificationTier": {
+                            "__typename": "verificationTier",
+                            "type": "LEGAL_DOCUMENTS"
+                        }
+                    },
+                    "country": {
+                        "__typename": "Country",
+                        "code": "ID",
+                        "name": "Indonesia"
+                    },
+                    "createdAt": "2025-03-17T09:38:11.228000Z",
+                    "educationLevel": "HIGH_SCHOOL",
+                    "fraudReportFlag": null,
+                    "hierarchicalJobCategory": {
+                        "__typename": "HierarchicalJobCategory",
+                        "children": null,
+                        "id": "f16caec4-e361-4766-b925-9e999a1421ae",
+                        "level": 3,
+                        "name": "Host",
+                        "parents": [
+                            {
+                                "__typename": "JobCategoryChildAndParent",
+                                "id": "d5783d85-3f31-4e8a-98ce-1ee40be838c8",
+                                "level": 2,
+                                "name": "Film & Television Media"
+                            },
+                            {
+                                "__typename": "JobCategoryChildAndParent",
+                                "id": "032fe1c6-767d-45c1-97e4-9cb502055e4a",
+                                "level": 1,
+                                "name": "Arts, Media, & Communications"
+                            }
+                        ]
+                    },
+                    "id": "397228b3-a13a-4456-819e-9e79f085fad0",
+                    "isActivelyHiring": false,
+                    "isApplied": false,
+                    "isHot": false,
+                    "location": {
+                        "__typename": "HierarchicalLocation",
+                        "administrativeLevelName": "District",
+                        "formattedName": "Curug",
+                        "id": "f17553c0-713d-4981-bd3a-b1377ac2e46d",
+                        "latitude": -6.2425,
+                        "level": 4,
+                        "longitude": 106.56611,
+                        "name": "Curug",
+                        "parents": [
+                            {
+                                "CountryCode": "ID",
+                                "__typename": "LocationParent",
+                                "administrativeLevelName": "Kabupaten",
+                                "formattedName": "Kab. Tangerang",
+                                "id": "d305a80e-4891-45a4-8c5b-29c9242f431e",
+                                "level": 3,
+                                "name": "Tangerang",
+                                "parents": [
+                                    {
+                                        "__typename": "LocationGrandParent",
+                                        "formattedName": "Banten",
+                                        "level": 2,
+                                        "slug": "banten"
+                                    },
+                                    {
+                                        "__typename": "LocationGrandParent",
+                                        "formattedName": "Indonesia",
+                                        "level": 1,
+                                        "slug": "indonesia"
+                                    }
+                                ],
+                                "slug": "kab-tangerang"
+                            },
+                            {
+                                "CountryCode": "ID",
+                                "__typename": "LocationParent",
+                                "administrativeLevelName": "Province",
+                                "formattedName": "Banten",
+                                "id": "82f248c3-3fb3-4600-98fe-4afb47d7558d",
+                                "level": 2,
+                                "name": "Banten",
+                                "parents": [
+                                    {
+                                        "__typename": "LocationGrandParent",
+                                        "formattedName": "Indonesia",
+                                        "level": 1,
+                                        "slug": "indonesia"
+                                    }
+                                ],
+                                "slug": "banten"
+                            },
+                            {
+                                "CountryCode": "ID",
+                                "__typename": "LocationParent",
+                                "administrativeLevelName": "Country",
+                                "formattedName": "Indonesia",
+                                "id": "7542a4d7-4324-4f76-ae1f-2e37ffb1198b",
+                                "level": 1,
+                                "name": "Indonesia",
+                                "parents": null,
+                                "slug": "indonesia"
+                            }
+                        ],
+                        "slug": "curug"
+                    },
+                    "maxYearsOfExperience": 3,
+                    "minYearsOfExperience": 1,
+                    "salaries": [
+                        {
+                            "CurrencyCode": "IDR",
+                            "__typename": "JobSalary",
+                            "id": "5ef0141d-f43b-44ed-95a6-edac58110090",
+                            "maxAmount": 3000000,
+                            "minAmount": 1000000,
+                            "salaryMode": "MONTH",
+                            "salaryType": "BASIC"
+                        }
+                    ],
+                    "salaryEstimate": null,
+                    "shouldShowSalary": true,
+                    "skills": [
+                        {
+                            "__typename": "Skill",
+                            "mustHave": true,
+                            "skill": {
+                                "__typename": "SkillDetail",
+                                "id": "467148be-fabe-4fee-a4fd-ca99cd122181",
+                                "name": "Host"
+                            }
+                        },
+                        {
+                            "__typename": "Skill",
+                            "mustHave": true,
+                            "skill": {
+                                "__typename": "SkillDetail",
+                                "id": "10144ec8-a194-496f-bc3f-9fa409b9ac6d",
+                                "name": "Marketing Communications"
+                            }
+                        },
+                        {
+                            "__typename": "Skill",
+                            "mustHave": true,
+                            "skill": {
+                                "__typename": "SkillDetail",
+                                "id": "80f61992-6fea-448d-877e-8939f342d66c",
+                                "name": "Public Speaking"
+                            }
+                        },
+                        {
+                            "__typename": "Skill",
+                            "mustHave": true,
+                            "skill": {
+                                "__typename": "SkillDetail",
+                                "id": "995d8c1f-9c91-45c0-97fc-b5ff59cc279e",
+                                "name": "Live Streaming"
+                            }
+                        }
+                    ],
+                    "source": "NATIVE",
+                    "status": "OPEN",
+                    "title": "Host live ( Berpengalaman )",
+                    "traceInfo": "8734a70ad9708c0998234c6ced1c619a",
+                    "type": "FULL_TIME",
+                    "updatedAt": "2025-03-17T09:38:12.659000Z",
+                    "workArrangementOption": "ONSITE"
+                },
+                {
+                    "__typename": "Job",
+                    "city": {
+                        "__typename": "City",
+                        "id": "133415",
+                        "name": "Jakarta Timur"
+                    },
+                    "citySubDivision": {
+                        "__typename": "CitySubDivision",
+                        "id": "0xc003974b08",
+                        "name": "Kramat Jati"
+                    },
+                    "company": {
+                        "IndustryId": 96,
+                        "__typename": "Company",
+                        "id": "e8362290-dbb2-4c2c-82aa-a18227fa4c85",
+                        "industry": {
+                            "__typename": "Industry",
+                            "id": 96,
+                            "name": "Information Technology and Services"
+                        },
+                        "isVIP": false,
+                        "logo": "9df947d10dbfd6ea6fdc7f72be5e8a0b.jpg",
+                        "name": "PT Adastra Visi Teknologi",
+                        "status": "VERIFIED",
+                        "verificationTier": {
+                            "__typename": "verificationTier",
+                            "type": "LEGAL_DOCUMENTS"
+                        }
+                    },
+                    "country": {
+                        "__typename": "Country",
+                        "code": "ID",
+                        "name": "Indonesia"
+                    },
+                    "createdAt": "2025-03-17T09:11:17.487000Z",
+                    "educationLevel": "BACHELOR_DEGREE",
+                    "fraudReportFlag": null,
+                    "hierarchicalJobCategory": {
+                        "__typename": "HierarchicalJobCategory",
+                        "children": null,
+                        "id": "4268c9d3-2fb2-4738-b191-9644a2ad5362",
+                        "level": 3,
+                        "name": "Data Engineer",
+                        "parents": [
+                            {
+                                "__typename": "JobCategoryChildAndParent",
+                                "id": "9dd9bc4d-38d5-4b5e-876a-de19bc22da45",
+                                "level": 1,
+                                "name": "Computer & Technology"
+                            },
+                            {
+                                "__typename": "JobCategoryChildAndParent",
+                                "id": "1f21f824-8846-4df3-8cb0-3980b88133e8",
+                                "level": 2,
+                                "name": "Data"
+                            }
+                        ]
+                    },
+                    "id": "632129ca-6929-479f-87cc-d6562c8ed1d2",
+                    "isActivelyHiring": false,
+                    "isApplied": false,
+                    "isHot": false,
+                    "location": {
+                        "__typename": "HierarchicalLocation",
+                        "administrativeLevelName": "District",
+                        "formattedName": "Kramatjati",
+                        "id": "5230a7f9-b794-4ce0-84ac-282f83530837",
+                        "latitude": -6.275,
+                        "level": 4,
+                        "longitude": 106.86389,
+                        "name": "Kramatjati",
+                        "parents": [
+                            {
+                                "CountryCode": "ID",
+                                "__typename": "LocationParent",
+                                "administrativeLevelName": "City",
+                                "formattedName": "Jakarta Timur",
+                                "id": "3d6ac5e8-f12d-40cd-823d-44597402ea3b",
+                                "level": 3,
+                                "name": "Jakarta Timur",
+                                "parents": [
+                                    {
+                                        "__typename": "LocationGrandParent",
+                                        "formattedName": "DKI Jakarta",
+                                        "level": 2,
+                                        "slug": "dki-jakarta"
+                                    },
+                                    {
+                                        "__typename": "LocationGrandParent",
+                                        "formattedName": "Indonesia",
+                                        "level": 1,
+                                        "slug": "indonesia"
+                                    }
+                                ],
+                                "slug": "jakarta-timur"
+                            },
+                            {
+                                "CountryCode": "ID",
+                                "__typename": "LocationParent",
+                                "administrativeLevelName": "Province",
+                                "formattedName": "DKI Jakarta",
+                                "id": "78d63064-78a1-4577-8516-036a6c5e903e",
+                                "level": 2,
+                                "name": "DKI Jakarta",
+                                "parents": [
+                                    {
+                                        "__typename": "LocationGrandParent",
+                                        "formattedName": "Indonesia",
+                                        "level": 1,
+                                        "slug": "indonesia"
+                                    }
+                                ],
+                                "slug": "dki-jakarta"
+                            },
+                            {
+                                "CountryCode": "ID",
+                                "__typename": "LocationParent",
+                                "administrativeLevelName": "Country",
+                                "formattedName": "Indonesia",
+                                "id": "7542a4d7-4324-4f76-ae1f-2e37ffb1198b",
+                                "level": 1,
+                                "name": "Indonesia",
+                                "parents": null,
+                                "slug": "indonesia"
+                            }
+                        ],
+                        "slug": "kramatjati"
+                    },
+                    "maxYearsOfExperience": 10,
+                    "minYearsOfExperience": 5,
+                    "salaries": [
+                        {
+                            "CurrencyCode": "IDR",
+                            "__typename": "JobSalary",
+                            "id": "08bc72b5-d956-4ec9-869e-b4bced26fec0",
+                            "maxAmount": null,
+                            "minAmount": 9000000,
+                            "salaryMode": "MONTH",
+                            "salaryType": "BASIC"
+                        }
+                    ],
+                    "salaryEstimate": null,
+                    "shouldShowSalary": true,
+                    "skills": [
+                        {
+                            "__typename": "Skill",
+                            "mustHave": true,
+                            "skill": {
+                                "__typename": "SkillDetail",
+                                "id": "7dcd39cf-5ebe-4239-af75-0061ec2f8e6d",
+                                "name": "Attention to Detail"
+                            }
+                        },
+                        {
+                            "__typename": "Skill",
+                            "mustHave": true,
+                            "skill": {
+                                "__typename": "SkillDetail",
+                                "id": "7b653f7a-bedd-4aea-bf1c-15a08f2ab5ec",
+                                "name": "Communication Skills"
+                            }
+                        },
+                        {
+                            "__typename": "Skill",
+                            "mustHave": true,
+                            "skill": {
+                                "__typename": "SkillDetail",
+                                "id": "430e3cea-f330-494c-a76a-df8832e26016",
+                                "name": "Teamwork"
+                            }
+                        }
+                    ],
+                    "source": "NATIVE",
+                    "status": "OPEN",
+                    "title": "Data & Application Operation Engineer",
+                    "traceInfo": "8734a70ad9708c0998234c6ced1c619a",
+                    "type": "FULL_TIME",
+                    "updatedAt": "2025-03-17T09:11:18.809000Z",
+                    "workArrangementOption": "ONSITE"
+                },
