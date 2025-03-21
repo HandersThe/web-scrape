@@ -9,7 +9,7 @@ with open('config.json', 'r') as config_file:
     config = json.load(config_file)
     cookies = config['cookies']
 
-# Base headers (we’ll update 'referer' dynamically)
+# Base headers (update 'referer' dynamically)
 headers = {
     'accept': '*/*',
     'accept-language': 'id',
@@ -36,12 +36,12 @@ json_data = {
     'operationName': 'searchJobs',
     'variables': {
         'data': {
+            'SearchTerm': 'digital market',
             'CountryCode': 'ID',
-            'lastUpdatedAtRange': 'PAST_24_HOURS',
             'includeExternalJobs': True,
-            'searchVariant': 'VARIANT_A',
+            'searchVariant': 'VARIANT_C',
             'limit': 30,
-            'offset': 0,  # Will be updated dynamically
+            'offset': 0,
         },
     },
     'query': 'query searchJobs($data: JobSearchConditionInput!) {\n  searchJobs(data: $data) {\n    jobsInPage {\n      id\n      title\n      workArrangementOption\n      status\n      createdAt\n      updatedAt\n      isActivelyHiring\n      isHot\n      isApplied\n      shouldShowSalary\n      educationLevel\n      type\n      fraudReportFlag\n      salaryEstimate {\n        minAmount\n        maxAmount\n        CurrencyCode\n        __typename\n      }\n      company {\n        ...CompanyFields\n        __typename\n      }\n      citySubDivision {\n        id\n        name\n        __typename\n      }\n      city {\n        ...CityFields\n        __typename\n      }\n      country {\n        ...CountryFields\n        __typename\n      }\n      salaries {\n        ...SalaryFields\n        __typename\n      }\n      location {\n        ...LocationFields\n        __typename\n      }\n      minYearsOfExperience\n      maxYearsOfExperience\n      source\n      type\n      hierarchicalJobCategory {\n        id\n        level\n        name\n        children {\n          name\n          level\n          id\n          __typename\n        }\n        parents {\n          id\n          level\n          name\n          __typename\n        }\n        __typename\n      }\n      skills {\n        skill {\n          id\n          name\n          __typename\n        }\n        mustHave\n        __typename\n      }\n      traceInfo\n      __typename\n    }\n    numberOfJobsCreatedInLast14Days\n    totalJobs\n    expInfo\n    __typename\n  }\n}\n\nfragment CompanyFields on Company {\n  id\n  name\n  logo\n  status\n  isVIP\n  IndustryId\n  industry {\n    id\n    name\n    __typename\n  }\n  verificationTier {\n    type\n    __typename\n  }\n  __typename\n}\n\nfragment CityFields on City {\n  id\n  name\n  __typename\n}\n\nfragment CountryFields on Country {\n  code\n  name\n  __typename\n}\n\nfragment SalaryFields on JobSalary {\n  id\n  salaryType\n  salaryMode\n  maxAmount\n  minAmount\n  CurrencyCode\n  __typename\n}\n\nfragment LocationFields on HierarchicalLocation {\n  id\n  name\n  administrativeLevelName\n  formattedName\n  level\n  slug\n  latitude\n  longitude\n  parents {\n    id\n    name\n    administrativeLevelName\n    formattedName\n    level\n    slug\n    CountryCode: countryCode\n    parents {\n      level\n      formattedName\n      slug\n      __typename\n    }\n    __typename\n  }\n  __typename\n}',
@@ -80,7 +80,7 @@ for page in pages:
     print(f"Scraping page {page} (offset: {offset})...")
 
     # Update the referer header with the current page number
-    headers['referer'] = f'https://glints.com/id/opportunities/jobs/explore?country=ID&locationName=All+Cities%2FProvinces&lastUpdated=PAST_24_HOURS&page={page}'
+    headers['referer'] = f'https://glints.com/id/opportunities/jobs/explore?keyword=digital+market&country=ID&locationName=All+Cities%2FProvinces&lowestLocationLevel=1&page={page}'
 
     # Update the offset in the json_data
     json_data['variables']['data']['offset'] = offset
